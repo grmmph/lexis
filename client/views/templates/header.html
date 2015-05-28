@@ -1,0 +1,62 @@
+<template name="header">
+	<nav class="navbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+			            <span class="sr-only">Toggle navigation</span>
+			            <span class="icon-hamburger"></span>
+			          </button>
+				<a class="navbar-brand" href="/"><img src="/images/logo-cream.png"></a>
+				<div class="set-langs set-langs-mobile show-when-small">
+					{{> setLangs}}
+				</div>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="{{activeClass 'add'}}"><a class="menu-item" href="/add">
+						<div class="circle"><i class='icon-translate'></i></div>
+						<div class='text'>Add Words</div>
+					</a>
+					</li>
+
+					<li class="{{activeClass 'practice'}}"><a class="menu-item" href="/practice">
+						<div class="circle"><i class='icon-practice'></i></div>
+						<div class='text'>Practice</div>
+					</a></li>
+
+					<li class="{{activeClass 'my-words'}}"><a class="menu-item" href="/my-words">
+						<div class="circle"><i class='icon-edit'></i></div>
+						<div class='text'>My words</div>
+					</a></li>
+
+					<li class="{{activeClass 'help'}}"><a class="menu-item" href="/help">
+						<div class="circle"><i class='icon-help'></i></div>
+						<div class='text'>Help</div>
+					</a></li>
+
+				</ul>
+				<ul class="navbar-right hide-when-small">
+					<div class="row login">
+						<div class="hello">
+						<!-- Hello {{#if userDisplayName}}{{userDisplayName}}{{else}}Guest{{/if}}! -->
+							{{#if userDisplayName}}
+							<a href="/logout">
+								<i class="icon-key"></i>
+								Logout
+							</a>
+							{{else}}
+							<a href="/login">
+								<i class="icon-key"></i>
+								Login
+							</a>
+							{{/if}}
+						</div>
+					</div>
+					<div class="set-langs">
+						{{> setLangs}}
+					</div>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</template>

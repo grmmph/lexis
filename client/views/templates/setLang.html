@@ -1,0 +1,21 @@
+<template name="setLangs">
+	<div class="dropdown lang-dropdown lang-dropdown-from">
+	  <div class="lang-dropdown-btn dropdown-toggle" id="lang-from-btn" data-toggle="dropdown" aria-expanded="true">
+	    <img src="/images/flags/{{languageFrom}}.png">
+	  </div>
+	  <ul class="dropdown-menu" role="menu" aria-labelledby="lang-from-dropdown" data-value='languageFrom'>
+	    <li class='lang-switch' data-value="en"><a role="menuitem" tabindex="-1"><img src="/images/flags/en.png"></a></li>
+	    <li class='lang-switch' data-value="de"><a role="menuitem" tabindex="-1"><img src="/images/flags/de.png"></a></li>
+	  </ul>
+	</div>
+	<i class="icon-arrow-switch"></i>
+	<div class="dropdown lang-dropdown lang-dropdown-to">
+	  <div class="lang-dropdown-btn dropdown-toggle" id="lang-to-btn" data-toggle="dropdown" aria-expanded="true">
+	    <img src="/images/flags/{{languageTo}}.png">
+	  </div>
+	  <ul class="dropdown-menu" role="menu" aria-labelledby="lang-to-dropdown" data-value='languageTo'>
+	    <li class='lang-switch' data-value="en"><a role="menuitem" tabindex="-1"><img src="/images/flags/en.png"></a></li>
+	    <li class='lang-switch' data-value="de"><a role="menuitem" tabindex="-1"><img src="/images/flags/de.png"></a></li>
+	  </ul>
+	</div>
+</template>

@@ -1,0 +1,27 @@
+<template name="myWords">
+
+	<div class="small-container translate">
+		{{#if hasWords}}
+			<h1>My words</h1>
+			{{else}}
+			<h3>You haven't added any words to your words list yet.</h3>
+			<a href="/add"><button>Add more words</button></a>
+		{{/if}}
+		<div class="cards-list row">
+		{{#each cardsTexts}}
+			<div class="col-sm-6">
+				<div class="row card-list-item {{markedClass originalText}}" data-id="{{_id}}">
+					{{#if isMarked originalText}}
+					<div class="col-xs-9 unmark" data-toggle="tooltip" data-placement="top" title='Unmark word' data-unmark="{{originalText}}">{{translation}}</div>
+					{{else}}
+					<div class="col-xs-9">{{translation}}</div>
+					{{/if}}
+					<div class="col-xs-3 remove-container" ><i class="remove-word-btn icon-delete" date-remove="{{originalText}}" data-toggle="tooltip" data-placement="top" title="Remove"></i></div>
+				</div>
+			</div>
+		{{/each}}
+		</div>
+		<!-- <button class="remove-cards">Remove all my words</button> -->
+	</div>
+
+</template>

@@ -1,0 +1,27 @@
+<template name="card">
+{{#if allCardsMarked}}
+  <div class='small-container'>
+    {{#if hasWords}}
+      <h3>Hooray! You have mastered all your words</h3>
+      <a href="/add"><button>Add more words</button></a>
+      <a href="/my-words"><button>Browse all my words</button></a>
+      {{else}}
+      <h3>You haven't added any words to your words list yet.</h3>
+      <a href="/add"><button>Add more words</button></a>
+    {{/if}}
+  </div>
+{{else}}
+  <div class="card" data-original-text="{{languageFrom}}">
+    <div class="card-side original-text">{{languageFrom}}</div>
+    <div class="card-side translated-text">{{getTranslation languageFrom}}</div>
+  </div>
+  <div class="card-control">
+    {{#if isMarked}}
+      <button class="card-btn success mark-card-btn" disabled><i class="icon-check"></i></button>
+      {{else}}
+      <button class="card-btn mark-card-btn" data-toggle="tooltip" data-placement="top" title="Mark as done"><i class="icon-check"></i></button>
+    {{/if}}
+    <!-- <button class="card-btn switch-card-btn"><i class="icon-switch"></i></button> -->
+  </div>
+{{/if}}
+</template>

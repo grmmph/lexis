@@ -1,0 +1,19 @@
+<template name="login">
+	<div class="small-container">
+		<form id="login-form" action="action">
+ 			{{#if isLoginTypeRegister}} <h1>Sign up</h1> {{else}} <h1>Log in</h1> {{/if}}
+	        <input type="email" placeholder="Email" id="login-email" />
+	        <input type="password" placeholder="Passwords" id="login-password" />
+	        <button type="submit" class="submit" id="login-button">
+	        {{#if isLoginTypeRegister}}
+	        Sign up
+	        {{else}}
+	        Log in
+	        {{/if}}
+	        </button>
+	        {{#unless isLoginTypeRegister}}
+	        <button class="switch-register" data-value="register">I need to register first</button>
+	        {{/unless}}
+	   </form>
+   </div>
+</template>

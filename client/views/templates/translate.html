@@ -1,0 +1,33 @@
+<template name="translate">
+	<div class="small-container translate">
+		<h1>Add words</h1>
+		<div class='input-container row' >
+			<div class="col-xs-2 flag-container">
+				<img src="/images/flags/{{languageFrom}}.png">
+			</div>
+			<div class="col-xs-10">
+				<input name="text-to-translate" data-toggle="tooltip" data-placement="top" title="Type a word to translate" />
+			</div>
+		</div>
+		<div class='input-container row'>
+			<div class="col-xs-2 flag-container">
+				<img src="/images/flags/{{languageTo}}.png">
+			</div>
+			<div class="col-xs-10">
+				<div class="output translation-output">
+				{{translationText}}
+				</div>
+			</div>
+		</div>
+		<div class="row">
+		<div class="col-xs-2"></div>
+		<div class="col-xs-10">
+		{{#if isSaved}}
+			<button class="btn-save-card success" disabled>Saved!</button>
+			{{else}}
+			<button class="btn-save-card">Add word to my list</button>
+		{{/if}}
+		</div>
+		</div>
+	</div>
+</template>
